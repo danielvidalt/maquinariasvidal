@@ -521,8 +521,10 @@ document.getElementById("formReserva").addEventListener("submit", function(e){
     mensaje += `Teléfono: ${telefono}%0A`;
     mensaje += `Dirección cliente: ${direccion}%0A%0A`;
 
-    mensaje += `Fecha inicio: ${inicio}%0A`;
-    mensaje += `Fecha término: ${fin}%0A`;
+    const inicioFormateado = new Date(inicio).toLocaleDateString('es-CL');
+const finFormateado = new Date(fin).toLocaleDateString('es-CL');
+    mensaje += `Fecha inicio: ${inicioFormateado}%0A`;
+mensaje += `Fecha término: ${finFormateado}%0A`;
     mensaje += `Días de arriendo: ${dias}%0A%0A`;
 
     mensaje += `Detalle de reserva:%0A`;
