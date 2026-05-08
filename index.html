@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maquinarias y Construcciones Vidal</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#111;color:white}
+
+.hero{
+    min-height:100vh;
+    background:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),
+    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    color:#FFD000;
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.5rem;
+    margin-bottom:30px;
+}
+
+.redes{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:35px;
+}
+
+.redes a{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#FFD000;
+    color:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.botones{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn, button{
+    background:#FFD000;
+    color:#000;
+    border:none;
+    padding:15px 25px;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+    text-decoration:none;
+    font-size:1rem;
+}
+
+.btn:hover, button:hover{
+    background:white;
+}
+
+section{
+    padding:80px 10%;
+}
+
+h2{
+    color:#FFD000;
+    text-align:center;
+    font-size:2.6rem;
+    margin-bottom:40px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#222;
+    border:2px solid #FFD000;
+    border-radius:16px;
+    overflow:hidden;
+}
+
+.media{
+    height:240px;
+    overflow:hidden;
+    background:#333;
+}
+
+.media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.info{
+    padding:25px;
+}
+
+.info h3{
+    color:#FFD000;
+    margin-bottom:15px;
+}
+
+.info p{
+    margin-bottom:8px;
+}
+
+.cantidad{
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:8px;
+    margin:15px 0;
+}
+
+.reserva{
+    background:#181818;
+}
+
+.lista-reserva{
+    max-width:900px;
+    margin:auto;
+    background:#222;
+    border:2px solid #FFD000;
+    border-radius:16px;
+    padding:25px;
+}
+
+.item-reserva{
+    border-bottom:1px solid #444;
+    padding:15px 0;
+}
+
+.total{
+    margin-top:20px;
+    background:#111;
+    border:1px solid #FFD000;
+    border-radius:12px;
+    padding:20px;
+}
+
+form{
+    max-width:900px;
+    margin:35px auto 0;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input, textarea{
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    font-size:1rem;
+}
+
+textarea{
+    min-height:100px;
+}
+
+.confirmacion{
+    text-align:center;
+    margin-top:25px;
+}
+
+.popup-confirmacion{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:#1e1e1e;
+    border:3px solid #FFD000;
+    padding:35px;
+    border-radius:20px;
+    z-index:9999;
+    width:90%;
+    max-width:520px;
+    text-align:center;
+    box-shadow:0 0 40px rgba(0,0,0,.9);
+}
+
+.popup-confirmacion h3{
+    color:#FFD000;
+    margin-bottom:20px;
+}
+
+.popup-confirmacion ul{
+    margin:20px 0;
+    text-align:left;
+    padding-left:25px;
+}
+
+.popup-confirmacion button{
+    width:100%;
+    margin-top:15px;
+}
+
+footer{
+    text-align:center;
+    background:#000;
+    padding:25px;
+}
+
+@media(max-width:768px){
+    .hero h1{font-size:2.4rem}
+    .hero p{font-size:1.1rem}
+    section{padding:60px 5%}
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+    <div>
+        <h1>Maquinarias y Construcciones Vidal</h1>
+        <p>Arriendo de Maquinarias y Servicios de Construcción.</p>
+
+        <div class="redes">
+            <a href="#" target="_blank">IG</a>
+            <a href="#" target="_blank">TT</a>
+            <a href="#" target="_blank">YT</a>
+        </div>
+
+        <div class="botones">
+            <a class="btn" href="#maquinarias">Ver Maquinarias</a>
+            <a class="btn" href="#servicios">Ver Servicios</a>
+        </div>
+    </div>
+</header>
+
+<section id="maquinarias">
+    <h2>Maquinarias Disponibles</h2>
+    <div class="grid" id="gridMaquinarias"></div>
+</section>
+
+<section id="servicios">
+    <h2>Servicios Disponibles</h2>
+    <div class="grid" id="gridServicios"></div>
+</section>
+
+<section class="reserva" id="reserva">
+    <h2>Mi Reserva</h2>
+
+    <div class="lista-reserva">
+        <div id="listaReserva">Aún no has agregado productos.</div>
+
+        <div class="total">
+            <p><strong>Total arriendo/servicio:</strong> $<span id="totalArriendo">0</span></p>
+            <p><strong>Total garantía:</strong> $<span id="totalGarantia">0</span></p>
+            <p><strong>Total a pagar:</strong> $<span id="totalFinal">0</span></p>
+        </div>
+    </div>
+
+    <form id="formReserva">
+        <input type="text" id="nombre" placeholder="Nombre completo" required>
+        <input type="text" id="rut" placeholder="RUT" required>
+        <input type="tel" id="telefono" placeholder="Número de teléfono" required>
+        <input type="text" id="direccionCliente" placeholder="Dirección del cliente" required>
+
+        <label>Fecha inicio</label>
+        <input type="date" id="fechaInicio" required>
+
+        <label>Fecha término</label>
+        <input type="date" id="fechaFin" required>
+
+        <textarea id="comentario" placeholder="Comentario adicional opcional"></textarea>
+
+        <button type="submit">Finalizar reserva por WhatsApp</button>
+    </form>
+
+    <div id="confirmacion" class="confirmacion"></div>
+</section>
+
+<footer>
+    © 2026 Maquinarias y Construcciones Vidal - Santiago de Chile
+</footer>
+
+<script>
+const whatsapp = "56966068918";
+
+const maquinarias = [
+    {codigo:"MAQ-001", nombre:"Pala", precio:2000, garantia:10000, img:"img/PALA.jpeg"},
+    {codigo:"MAQ-002", nombre:"Extensión", precio:3000, garantia:15000, img:"img/EXTENSION.jpg"},
+    {codigo:"MAQ-003", nombre:"Andamios 2M", precio:3000, garantia:50000, img:"img/ANDAMIO 2MT.jpg"},
+    {codigo:"MAQ-004", nombre:"Esmeril Angular 4.5", precio:5000, garantia:20000, img:"img/ESMERIL 4,5.jpeg"},
+    {codigo:"MAQ-005", nombre:"Carretilla", precio:6000, garantia:50000, img:"img/CARRETILLA 90 L.jpeg"},
+    {codigo:"MAQ-006", nombre:"Sierra Circular", precio:8000, garantia:40000, img:"img/SIERRA CIRCULAR.jpeg"},
+    {codigo:"MAQ-007", nombre:"Máquina de Soldar", precio:10000, garantia:80000, img:"img/SOLDADORA 1.jpeg"},
+    {codigo:"MAQ-008", nombre:"Trompo / Betonera 130 LT", precio:10000, garantia:100000, img:"img/TROMPO 1.jpeg"},
+    {codigo:"MAQ-009", nombre:"Rotomartillo", precio:10000, garantia:50000, img:"img/ROTOMARTILLO.jpg"},
+    {codigo:"MAQ-010", nombre:"Cango 7KG", precio:10000, garantia:80000, img:"img/CANGO 7KG 1.jpg"},
+    {codigo:"MAQ-011", nombre:"Revolvedor", precio:10000, garantia:70000, img:"img/REVOLVEDOR 1.jpeg"},
+    {codigo:"MAQ-012", nombre:"Carro de carga / Yegua", precio:10000, garantia:50000, img:"img/CARRO DE CARGA.jpeg"},
+    {codigo:"MAQ-013", nombre:"Cango 15KG", precio:15000, garantia:100000, img:"img/CANGO 15KG.jpg"},
+    {codigo:"MAQ-014", nombre:"Sonda Vibradora", precio:15000, garantia:100000, img:"img/SONDA VIBRADORA 38 mm 1.jpg"},
+    {codigo:"MAQ-015", nombre:"Generador 3000W", precio:20000, garantia:150000, img:"img/GENERADOR 3000W 1.jpeg"},
+    {codigo:"MAQ-016", nombre:"Placa Compactadora", precio:20000, garantia:250000, img:"img/PLACA COMPACTADORA.jpeg"},
+    {codigo:"MAQ-017", nombre:"Regla Vibradora", precio:30000, garantia:250000, img:"img/REGLA VIBRADORA.jpg"},
+    {codigo:"MAQ-018", nombre:"Alisador de Pavimento", precio:30000, garantia:250000, img:"img/ALISADOR DE PAVIMENTO 1.jpg"}
+];
+
+const servicios = [
+    {codigo:"SER-001", nombre:"Cango 7KG / 15KG con operador", precio:70000, unidad:"día laboral", img:"img/CANGO 7KG 2.jpg"},
+    {codigo:"SER-002", nombre:"Placa Compactadora", precio:500, unidad:"m²", img:"img/PLACA COMPACTADORA.jpeg"},
+    {codigo:"SER-003", nombre:"Regla Vibradora", precio:4000, unidad:"m³", img:"img/REGLA VIBRADORA.jpg"},
+    {codigo:"SER-004", nombre:"Alisador de Pavimento / Piso Pulido", precio:135000, unidad:"servicio base", img:"img/ALISADOR DE PAVIMENTO 2.jpg"}
+];
+
+let reserva = [];
+
+function formato(num){
+    return Number(num).toLocaleString("es-CL");
+}
+
+function obtenerDias(){
+    const inicioValor = document.getElementById("fechaInicio").value;
+    const finValor = document.getElementById("fechaFin").value;
+
+    if(!inicioValor || !finValor) return 0;
+
+    const inicio = new Date(inicioValor);
+    const fin = new Date(finValor);
+
+    const diferencia = Math.ceil((fin - inicio) / (1000 * 60 * 60 * 24)) + 1;
+
+    return diferencia > 0 ? diferencia : 0;
+}
+
+function pintarMaquinarias(){
+    const grid = document.getElementById("gridMaquinarias");
+    grid.innerHTML = "";
+
+    maquinarias.forEach((m, index)=>{
+        grid.innerHTML += `
+        <div class="card">
+            <div class="media">
+                <img src="${m.img}" alt="${m.nombre}">
+            </div>
+
+            <div class="info">
+                <h3>${m.codigo} — ${m.nombre}</h3>
+                <p>Precio por día laboral: $${formato(m.precio)}</p>
+                <p>Garantía: $${formato(m.garantia)}</p>
+
+                <input 
+                    class="cantidad" 
+                    id="cant-maq-${index}" 
+                    type="number" 
+                    min="1" 
+                    value="1"
+                >
+
+                <button onclick="agregarMaquinaria(${index})">
+                    Agregar a reserva
+                </button>
+            </div>
+        </div>`;
+    });
+}
+
+function pintarServicios(){
+    const grid = document.getElementById("gridServicios");
+    grid.innerHTML = "";
+
+    servicios.forEach((s, index)=>{
+        grid.innerHTML += `
+        <div class="card">
+            <div class="media">
+                <img src="${s.img}" alt="${s.nombre}">
+            </div>
+
+            <div class="info">
+                <h3>${s.codigo} — ${s.nombre}</h3>
+                <p>Precio: $${formato(s.precio)} por ${s.unidad}</p>
+
+                <button onclick="agregarServicio(${index})">
+                    Agregar a reserva
+                </button>
+            </div>
+        </div>`;
+    });
+}
+
+function agregarMaquinaria(index){
+    const item = maquinarias[index];
+    const cantidad = Number(document.getElementById(`cant-maq-${index}`).value) || 1;
+
+    reserva.push({
+        ...item,
+        tipo:"Maquinaria",
+        cantidad:cantidad
+    });
+
+    actualizarReserva();
+    location.href = "#reserva";
+}
+
+function agregarServicio(index){
+    const item = servicios[index];
+
+    reserva.push({
+        ...item,
+        tipo:"Servicio",
+        cantidad:1,
+        garantia:0
+    });
+
+    actualizarReserva();
+    location.href = "#reserva";
+}
+
+function actualizarReserva(){
+    const contenedor = document.getElementById("listaReserva");
+
+    if(reserva.length === 0){
+        contenedor.innerHTML = "Aún no has agregado productos.";
+        calcularTotales();
+        return;
+    }
+
+    contenedor.innerHTML = "";
+
+    reserva.forEach((item, index)=>{
+        contenedor.innerHTML += `
+        <div class="item-reserva">
+            <strong>${index + 1}. ${item.codigo} — ${item.nombre}</strong><br>
+            Tipo: ${item.tipo}<br>
+            Cantidad: ${item.cantidad}<br>
+            Precio unitario: $${formato(item.precio)}<br>
+            Garantía: $${formato(item.garantia || 0)}<br><br>
+
+            <button onclick="eliminarItem(${index})">
+                Eliminar
+            </button>
+        </div>`;
+    });
+
+    calcularTotales();
+}
+
+function eliminarItem(index){
+    reserva.splice(index, 1);
+    actualizarReserva();
+}
+
+function calcularTotales(){
+    const dias = obtenerDias();
+
+    let totalArriendo = 0;
+    let totalGarantia = 0;
+
+    reserva.forEach(item=>{
+        if(item.tipo === "Maquinaria"){
+            totalArriendo += item.precio * item.cantidad * dias;
+            totalGarantia += item.garantia * item.cantidad;
+        } else {
+            totalArriendo += item.precio * dias;
+        }
+    });
+
+    document.getElementById("totalArriendo").textContent = formato(totalArriendo);
+    document.getElementById("totalGarantia").textContent = formato(totalGarantia);
+    document.getElementById("totalFinal").textContent = formato(totalArriendo + totalGarantia);
+}
+
+document.getElementById("fechaInicio").addEventListener("change", calcularTotales);
+document.getElementById("fechaFin").addEventListener("change", calcularTotales);
+
+document.getElementById("formReserva").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    if(reserva.length === 0){
+        alert("Primero agrega una maquinaria o servicio a la reserva.");
+        return;
+    }
+
+    const dias = obtenerDias();
+
+    if(dias === 0){
+        alert("Selecciona una fecha de inicio y término válida.");
+        return;
+    }
+
+    const nombre = document.getElementById("nombre").value;
+    const rut = document.getElementById("rut").value;
+    const telefono = document.getElementById("telefono").value;
+    const direccion = document.getElementById("direccionCliente").value;
+    const inicio = document.getElementById("fechaInicio").value;
+    const fin = document.getElementById("fechaFin").value;
+    const comentario = document.getElementById("comentario").value;
+
+    let totalArriendo = 0;
+    let totalGarantia = 0;
+
+    let mensaje = `Hola, quiero realizar una reserva.%0A%0A`;
+
+    mensaje += `Nombre: ${nombre}%0A`;
+    mensaje += `RUT: ${rut}%0A`;
+    mensaje += `Teléfono: ${telefono}%0A`;
+    mensaje += `Dirección cliente: ${direccion}%0A%0A`;
+
+    mensaje += `Fecha inicio: ${inicio}%0A`;
+    mensaje += `Fecha término: ${fin}%0A`;
+    mensaje += `Días de arriendo: ${dias}%0A%0A`;
+
+    mensaje += `Detalle de reserva:%0A`;
+
+    reserva.forEach((item, i)=>{
+        let subtotal = 0;
+        let garantia = 0;
+
+        if(item.tipo === "Maquinaria"){
+            subtotal = item.precio * item.cantidad * dias;
+            garantia = item.garantia * item.cantidad;
+        } else {
+            subtotal = item.precio * dias;
+        }
+
+        totalArriendo += subtotal;
+        totalGarantia += garantia;
+
+        mensaje += `%0A${i + 1}) ${item.tipo}%0A`;
+        mensaje += `Código: ${item.codigo}%0A`;
+        mensaje += `Nombre: ${item.nombre}%0A`;
+        mensaje += `Cantidad: ${item.cantidad}%0A`;
+        mensaje += `Subtotal arriendo/servicio: $${formato(subtotal)}%0A`;
+        mensaje += `Garantía: $${formato(garantia)}%0A`;
+    });
+
+    mensaje += `%0ATotal arriendo/servicio: $${formato(totalArriendo)}%0A`;
+    mensaje += `Total garantía: $${formato(totalGarantia)}%0A`;
+    mensaje += `Total a pagar: $${formato(totalArriendo + totalGarantia)}%0A`;
+
+    if(comentario.trim() !== ""){
+        mensaje += `%0AComentario: ${comentario}%0A`;
+    }
+
+    mensaje += `%0AIMPORTANTE:%0A`;
+    mensaje += `Debe enviar foto de su Cédula de Identidad y comprobante de domicilio para hacer efectiva la reserva.%0A`;
+    mensaje += `Comprobantes válidos: agua, luz, internet, etc.`;
+
+    window.open(`https://wa.me/${whatsapp}?text=${mensaje}`, "_blank");
+
+    document.getElementById("confirmacion").innerHTML = `
+        <div class="popup-confirmacion">
+            <h3>✅ Solicitud enviada correctamente</h3>
+
+            <p>
+                <strong>IMPORTANTE:</strong><br><br>
+                Para hacer efectiva la reserva, debe enviar:
+            </p>
+
+            <ul>
+                <li>Foto de Cédula de Identidad</li>
+                <li>Comprobante de domicilio</li>
+            </ul>
+
+            <p>
+                Ejemplos válidos: agua, luz, internet, etc.
+            </p>
+
+            <p>
+                Nos pondremos en contacto a la brevedad.
+            </p>
+
+            <button onclick="cerrarPopup()">Entendido</button>
+        </div>
+    `;
+});
+
+function cerrarPopup(){
+    document.getElementById("confirmacion").innerHTML = "";
+}
+
+pintarMaquinarias();
+pintarServicios();
+calcularTotales();
+</script>
+
+</body>
+</html>
