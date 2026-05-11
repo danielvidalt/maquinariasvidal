@@ -747,7 +747,7 @@ function recalcularModal(){
         el.innerHTML =
             `<strong>Arriendo</strong> (${dias} día${dias>1?"s":""} × ${cant} ud): $${formato(arriendo)}<br>` +
             `<strong>Garantía:</strong> $${formato(garantia)}<br>` +
-            `<strong>Total estimado: $${formato(arriendo + garantia)}</strong>`;
+            `<strong>Total a pagar: $${formato(arriendo + garantia)}</strong>`;
     } else {
         el.textContent = "Selecciona fechas para ver el total estimado.";
     }
