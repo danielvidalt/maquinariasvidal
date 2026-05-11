@@ -22,210 +22,182 @@ body{background:#111;color:white}
     text-align:center;
     padding:20px;
 }
+.hero h1{color:#FFD000;font-size:4rem;margin-bottom:20px}
+.hero p{font-size:1.5rem;margin-bottom:30px}
 
-.hero h1{
-    color:#FFD000;
-    font-size:4rem;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:1.5rem;
-    margin-bottom:30px;
-}
-
-.redes{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    margin-bottom:35px;
-}
-
+.redes{display:flex;justify-content:center;gap:15px;margin-bottom:35px}
 .redes a{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    background:#FFD000;
-    color:#000;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-decoration:none;
-    font-weight:bold;
+    width:55px;height:55px;border-radius:50%;background:#FFD000;color:#000;
+    display:flex;justify-content:center;align-items:center;
+    text-decoration:none;font-weight:bold;
 }
 
-.botones{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
+.botones{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
 
 .btn, button{
-    background:#FFD000;
-    color:#000;
-    border:none;
-    padding:15px 25px;
-    border-radius:10px;
-    font-weight:bold;
-    cursor:pointer;
-    text-decoration:none;
-    font-size:1rem;
+    background:#FFD000;color:#000;border:none;
+    padding:15px 25px;border-radius:10px;font-weight:bold;
+    cursor:pointer;text-decoration:none;font-size:1rem;
 }
+.btn:hover, button:hover{background:white}
 
-.btn:hover, button:hover{
-    background:white;
-}
+section{padding:80px 10%}
+h2{color:#FFD000;text-align:center;font-size:2.6rem;margin-bottom:40px}
 
-section{
-    padding:80px 10%;
-}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:30px}
 
-h2{
-    color:#FFD000;
-    text-align:center;
-    font-size:2.6rem;
-    margin-bottom:40px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:#222;
-    border:2px solid #FFD000;
-    border-radius:16px;
-    overflow:hidden;
-}
+.card{background:#222;border:2px solid #FFD000;border-radius:16px;overflow:hidden}
 
 .media{
-    height:240px;
-    overflow:hidden;
-    background:#333;
+    height:240px;overflow:hidden;background:#333;
+    cursor:pointer;position:relative;
 }
-
-.media img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.media img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.media:hover img{transform:scale(1.05)}
+.media::after{
+    content:"🔍 Ver detalles";
+    position:absolute;inset:0;
+    background:rgba(0,0,0,0);color:transparent;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:bold;font-size:1rem;letter-spacing:1px;
+    transition:all .25s;
 }
+.media:hover::after{background:rgba(0,0,0,.55);color:#FFD000}
 
-.info{
-    padding:25px;
-}
+.info{padding:25px}
+.info h3{color:#FFD000;margin-bottom:15px}
+.info p{margin-bottom:8px}
 
-.info h3{
-    color:#FFD000;
-    margin-bottom:15px;
-}
+.cantidad{width:100%;padding:13px;border:none;border-radius:8px;margin:15px 0}
 
-.info p{
-    margin-bottom:8px;
-}
-
-.cantidad{
-    width:100%;
-    padding:13px;
-    border:none;
-    border-radius:8px;
-    margin:15px 0;
-}
-
-.reserva{
-    background:#181818;
-}
-
+.reserva{background:#181818}
 .lista-reserva{
-    max-width:900px;
-    margin:auto;
-    background:#222;
-    border:2px solid #FFD000;
-    border-radius:16px;
-    padding:25px;
+    max-width:900px;margin:auto;background:#222;
+    border:2px solid #FFD000;border-radius:16px;padding:25px;
 }
-
-.item-reserva{
-    border-bottom:1px solid #444;
-    padding:15px 0;
-}
+.item-reserva{border-bottom:1px solid #444;padding:15px 0}
 
 .total{
-    margin-top:20px;
-    background:#111;
-    border:1px solid #FFD000;
-    border-radius:12px;
-    padding:20px;
+    margin-top:20px;background:#111;
+    border:1px solid #FFD000;border-radius:12px;padding:20px;
 }
 
-form{
-    max-width:900px;
-    margin:35px auto 0;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
+form{max-width:900px;margin:35px auto 0;display:flex;flex-direction:column;gap:15px}
+input,textarea{padding:15px;border:none;border-radius:8px;font-size:1rem}
+textarea{min-height:100px}
 
-input, textarea{
-    padding:15px;
-    border:none;
-    border-radius:8px;
-    font-size:1rem;
-}
-
-textarea{
-    min-height:100px;
-}
-
-.confirmacion{
-    text-align:center;
-    margin-top:25px;
-}
+.confirmacion{text-align:center;margin-top:25px}
 
 .popup-confirmacion{
-    position:fixed;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    background:#1e1e1e;
-    border:3px solid #FFD000;
-    padding:35px;
-    border-radius:20px;
-    z-index:9999;
-    width:90%;
-    max-width:520px;
-    text-align:center;
+    position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+    background:#1e1e1e;border:3px solid #FFD000;
+    padding:35px;border-radius:20px;z-index:9999;
+    width:90%;max-width:520px;text-align:center;
     box-shadow:0 0 40px rgba(0,0,0,.9);
 }
+.popup-confirmacion h3{color:#FFD000;margin-bottom:20px}
+.popup-confirmacion ul{margin:20px 0;text-align:left;padding-left:25px}
+.popup-confirmacion button{width:100%;margin-top:15px}
 
-.popup-confirmacion h3{
-    color:#FFD000;
-    margin-bottom:20px;
+footer{text-align:center;background:#000;padding:25px}
+
+/* ===== MODAL ===== */
+.modal-overlay{
+    display:none;position:fixed;inset:0;
+    background:rgba(0,0,0,.9);z-index:3000;
+    align-items:center;justify-content:center;
+    padding:20px;overflow-y:auto;
+}
+.modal-overlay.activo{display:flex}
+
+.modal-box{
+    background:#1a1a1a;border:2px solid #FFD000;border-radius:20px;
+    width:100%;max-width:960px;
+    display:grid;grid-template-columns:1fr 1fr;
+    position:relative;overflow:hidden;
+    max-height:95vh;
 }
 
-.popup-confirmacion ul{
-    margin:20px 0;
-    text-align:left;
-    padding-left:25px;
+.modal-cerrar{
+    position:absolute;top:12px;right:12px;
+    background:#FFD000;color:#000;border:none;
+    border-radius:50%;width:36px;height:36px;
+    font-size:1.1rem;font-weight:bold;cursor:pointer;z-index:10;
+    display:flex;align-items:center;justify-content:center;
+    padding:0;
 }
+.modal-cerrar:hover{background:white}
 
-.popup-confirmacion button{
-    width:100%;
-    margin-top:15px;
+.modal-img-wrap{
+    background:#111;display:flex;align-items:center;justify-content:center;
+    min-height:400px;
 }
+.modal-img-wrap img{width:100%;height:100%;object-fit:cover;max-height:95vh}
 
-footer{
-    text-align:center;
-    background:#000;
-    padding:25px;
+.modal-info{
+    padding:28px 28px 20px;overflow-y:auto;
+    display:flex;flex-direction:column;gap:14px;
+    max-height:95vh;
 }
+.modal-codigo{color:#aaa;font-size:.82rem;letter-spacing:1px}
+.modal-info h2{color:#FFD000;font-size:1.35rem;text-align:left;margin:0}
+
+/* Tabs */
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab-btn{
+    background:#2d2d2d;color:#ccc;border:none;
+    padding:8px 18px;border-radius:8px;cursor:pointer;
+    font-size:.88rem;font-weight:bold;
+}
+.tab-btn.activo{background:#FFD000;color:#000}
+.tab-btn:hover:not(.activo){background:#444;color:#fff}
+
+.tab-contenido{display:none;color:#ccc;font-size:.93rem;line-height:1.65;min-height:80px}
+.tab-contenido.activo{display:block}
+
+.specs-tabla{width:100%;border-collapse:collapse}
+.specs-tabla tr:nth-child(even){background:#242424}
+.specs-tabla td{padding:7px 10px;border-bottom:1px solid #333;font-size:.88rem}
+.specs-tabla td:first-child{color:#FFD000;font-weight:bold;width:48%}
+
+/* Modal reserva */
+.modal-reserva{border-top:1px solid #3a3a3a;padding-top:14px;display:flex;flex-direction:column;gap:10px}
+
+.modal-precios{
+    background:#111;border:1px solid #444;border-radius:10px;
+    padding:12px 15px;display:flex;justify-content:space-between;gap:10px;
+    font-size:.88rem;flex-wrap:wrap;
+}
+.modal-precios span{color:#FFD000;font-weight:bold}
+
+.modal-fechas{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.modal-fechas label{font-size:.78rem;color:#aaa;display:block;margin-bottom:4px}
+.modal-date-input{width:100%;padding:9px;border:none;border-radius:8px;font-size:.88rem}
+
+.modal-cant-row{display:flex;align-items:center;gap:10px}
+.modal-cant-row label{font-size:.9rem;white-space:nowrap;color:#ccc}
+.modal-cant-row input{width:75px;padding:9px;border:none;border-radius:8px;font-size:.95rem}
+
+.modal-total-box{
+    background:#111;border:1px solid #333;border-radius:8px;
+    padding:10px 13px;font-size:.86rem;color:#aaa;line-height:1.7;
+}
+.modal-total-box strong{color:#FFD000}
+
+.modal-btn-agregar{
+    background:#FFD000;color:#000;border:none;
+    padding:13px;border-radius:10px;font-weight:bold;
+    cursor:pointer;font-size:1rem;width:100%;
+}
+.modal-btn-agregar:hover{background:white}
 
 @media(max-width:768px){
     .hero h1{font-size:2.4rem}
     .hero p{font-size:1.1rem}
     section{padding:60px 5%}
+    .modal-box{grid-template-columns:1fr}
+    .modal-img-wrap{min-height:220px;max-height:260px}
+    .modal-info{max-height:none}
 }
 </style>
 </head>
@@ -236,13 +208,11 @@ footer{
     <div>
         <h1>Maquinarias y Construcciones Vidal</h1>
         <p>Arriendo de Maquinarias y Servicios de Construcción.</p>
-
         <div class="redes">
             <a href="#" target="_blank">IG</a>
             <a href="#" target="_blank">TT</a>
             <a href="#" target="_blank">YT</a>
         </div>
-
         <div class="botones">
             <a class="btn" href="#maquinarias">Ver Maquinarias</a>
             <a class="btn" href="#servicios">Ver Servicios</a>
@@ -262,10 +232,8 @@ footer{
 
 <section class="reserva" id="reserva">
     <h2>Mi Reserva</h2>
-
     <div class="lista-reserva">
         <div id="listaReserva">Aún no has agregado productos.</div>
-
         <div class="total">
             <p><strong>Total arriendo/servicio:</strong> $<span id="totalArriendo">0</span></p>
             <p><strong>Total garantía:</strong> $<span id="totalGarantia">0</span></p>
@@ -278,15 +246,11 @@ footer{
         <input type="text" id="rut" placeholder="RUT" required>
         <input type="tel" id="telefono" placeholder="Número de teléfono" required>
         <input type="text" id="direccionCliente" placeholder="Dirección del cliente" required>
-
         <label>Fecha inicio</label>
         <input type="date" id="fechaInicio" required>
-
         <label>Fecha término</label>
         <input type="date" id="fechaFin" required>
-
         <textarea id="comentario" placeholder="Comentario adicional opcional"></textarea>
-
         <button type="submit">Finalizar reserva por WhatsApp</button>
     </form>
 
@@ -297,28 +261,298 @@ footer{
     © 2026 Maquinarias y Construcciones Vidal - Santiago de Chile
 </footer>
 
+<!-- ===== MODAL ===== -->
+<div id="modal" class="modal-overlay" onclick="clickFueraModal(event)">
+    <div class="modal-box">
+        <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
+
+        <div class="modal-img-wrap">
+            <img id="modalImg" src="" alt="">
+        </div>
+
+        <div class="modal-info">
+            <span class="modal-codigo" id="modalCodigo"></span>
+            <h2 id="modalNombre"></h2>
+
+            <div class="tabs">
+                <button class="tab-btn activo" onclick="cambiarTab('descripcion',this)">Descripción</button>
+                <button class="tab-btn" onclick="cambiarTab('especificaciones',this)">Especificaciones</button>
+            </div>
+
+            <div id="tab-descripcion" class="tab-contenido activo">
+                <p id="modalDesc"></p>
+            </div>
+            <div id="tab-especificaciones" class="tab-contenido">
+                <table class="specs-tabla" id="modalSpecs"></table>
+            </div>
+
+            <div class="modal-reserva">
+                <div class="modal-precios">
+                    <div>Precio/día laboral: <span id="mPrecio"></span></div>
+                    <div>Garantía: <span id="mGarantia"></span></div>
+                </div>
+
+                <div class="modal-cant-row">
+                    <label>Cantidad:</label>
+                    <input type="number" id="mCantidad" min="1" value="1" oninput="recalcularModal()">
+                </div>
+
+                <div class="modal-fechas">
+                    <div>
+                        <label>Fecha inicio</label>
+                        <input type="date" id="mFechaInicio" class="modal-date-input" oninput="recalcularModal()">
+                    </div>
+                    <div>
+                        <label>Fecha término</label>
+                        <input type="date" id="mFechaFin" class="modal-date-input" oninput="recalcularModal()">
+                    </div>
+                </div>
+
+                <div class="modal-total-box" id="mTotal">Selecciona fechas para ver el total estimado.</div>
+
+                <button class="modal-btn-agregar" onclick="agregarDesdeModal()">Agregar a reserva</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
 const whatsapp = "56966068918";
 
 const maquinarias = [
-    {codigo:"MAQ-001", nombre:"Pala", precio:2000, garantia:10000, img:"img/PALA.jpeg"},
-    {codigo:"MAQ-002", nombre:"Extensión", precio:3000, garantia:15000, img:"img/EXTENSION.jpg"},
-    {codigo:"MAQ-003", nombre:"Andamios 2M", precio:3000, garantia:50000, img:"img/ANDAMIO 2MT.jpg"},
-    {codigo:"MAQ-004", nombre:"Esmeril Angular 4.5", precio:5000, garantia:20000, img:"img/1 ESMERIL 4.5.jpg"},
-    {codigo:"MAQ-005", nombre:"Carretilla", precio:6000, garantia:50000, img:"img/CARRETILLA 90 L.jpeg"},
-    {codigo:"MAQ-006", nombre:"Sierra Circular", precio:8000, garantia:40000, img:"img/SIERRA CIRCULAR.jpeg"},
-    {codigo:"MAQ-007", nombre:"Máquina de Soldar", precio:10000, garantia:80000, img:"img/MAQUINA DE SOLDAR.jpg"},
-    {codigo:"MAQ-008", nombre:"Trompo / Betonera 130 LT", precio:10000, garantia:100000, img:"img/TROMPO BETONERA.png"},
-    {codigo:"MAQ-009", nombre:"Rotomartillo", precio:10000, garantia:50000, img:"img/ROTOMARTILLO.jpg"},
-    {codigo:"MAQ-010", nombre:"Cango 7KG", precio:10000, garantia:80000, img:"img/CANGO 7KG 1.jpg"},
-    {codigo:"MAQ-011", nombre:"Revolvedor", precio:10000, garantia:70000, img:"img/REVOLVEDOR 1.jpg"},
-    {codigo:"MAQ-012", nombre:"Carro de carga / Yegua", precio:10000, garantia:50000, img:"img/CARRO YEGUA.jpg"},
-    {codigo:"MAQ-013", nombre:"Cango 15KG", precio:15000, garantia:100000, img:"img/CANGO 15KG.jpg"},
-    {codigo:"MAQ-014", nombre:"Sonda Vibradora", precio:15000, garantia:100000, img:"img/SONDA VIBRADORA 38 mm 1.jpg"},
-    {codigo:"MAQ-015", nombre:"Generador 3000W", precio:20000, garantia:150000, img:"img/GENERADOR 1.jpeg"},
-    {codigo:"MAQ-016", nombre:"Placa Compactadora", precio:20000, garantia:250000, img:"img/PLACA COMPACTADORA 2.jpg"},
-    {codigo:"MAQ-017", nombre:"Regla Vibradora", precio:30000, garantia:250000, img:"img/REGLA VIBRADORA 2.jpg"},
-    {codigo:"MAQ-018", nombre:"Alisador de Pavimento", precio:30000, garantia:250000, img:"img/ALISADOR PAVIMENTO.jpeg"}
+    {
+        codigo:"MAQ-001", nombre:"Pala", precio:2000, garantia:10000, img:"img/PALA.jpeg",
+        descripcion:"Pala metálica de uso profesional para trabajos de excavación, movimiento de tierra y materiales de construcción.",
+        especificaciones:[
+            {l:"Espesor", v:"1,7 mm"},
+            {l:"Ancho de la punta", v:"225 mm"},
+            {l:"Largo", v:"1 mt"},
+            {l:"Asa", v:"Metal"},
+            {l:"Mango", v:"Metal"},
+            {l:"Peso", v:"1,6 kg"}
+        ]
+    },
+    {
+        codigo:"MAQ-002", nombre:"Extensión", precio:3000, garantia:15000, img:"img/EXTENSION.jpg",
+        descripcion:"Extensión eléctrica naranjo de 10 metros con capacidad de 10 amperes. Ideal para suministrar energía en faenas de construcción donde los enchufes quedan lejos.",
+        especificaciones:[
+            {l:"Descripción", v:"Extensión naranjo 10mt 10A"},
+            {l:"Material", v:"PVC - Cobre"}
+        ]
+    },
+    {
+        codigo:"MAQ-003", nombre:"Andamios 2M", precio:3000, garantia:50000, img:"img/ANDAMIO 2MT.jpg",
+        descripcion:"Andamio estándar STD color azul, ideal para trabajos en altura. Incluye 2 tablones metálicos, 2 marcos y 4 diagonales. Estructura de acero de alta resistencia y seguridad. Perfecto para obras y faenas exigentes.",
+        especificaciones:[
+            {l:"Dimensiones", v:"1,07 x 2,30 x 2 metros"},
+            {l:"Color", v:"Azul"},
+            {l:"Material", v:"Acero"},
+            {l:"Incluye", v:"2 tablones metálicos, 2 marcos, 4 diagonales"}
+        ]
+    },
+    {
+        codigo:"MAQ-004", nombre:"Esmeril Angular 4.5", precio:5000, garantia:20000, img:"img/1 ESMERIL 4.5.jpg",
+        descripcion:"Esmeril angular eléctrico de 4,5 pulgadas y 820W. Ideal para cortar, desbastar y pulir materiales como metal, hormigón y cerámica. Conexión alámbrica.",
+        especificaciones:[
+            {l:"Contenido", v:"1 Esmeril angular"},
+            {l:"Conexión", v:"Alámbrico"},
+            {l:"Potencia", v:"820 W"},
+            {l:"Eje", v:"5/8\" - 11/M14"},
+            {l:"Diámetro de disco", v:"4 1/2\""}
+        ]
+    },
+    {
+        codigo:"MAQ-005", nombre:"Carretilla", precio:6000, garantia:50000, img:"img/CARRETILLA 90 L.jpeg",
+        descripcion:"Carretilla de acero de 90 litros de capacidad. Ideal para el transporte de materiales pesados en obras de construcción, jardines y faenas en general.",
+        especificaciones:[
+            {l:"Alto", v:"63 cm"},
+            {l:"Ancho", v:"64 cm"},
+            {l:"Profundidad", v:"82 cm"},
+            {l:"Largo", v:"137 cm"},
+            {l:"Peso", v:"14,5 kg"},
+            {l:"Material", v:"Acero"}
+        ]
+    },
+    {
+        codigo:"MAQ-006", nombre:"Sierra Circular", precio:8000, garantia:40000, img:"img/SIERRA CIRCULAR.jpeg",
+        descripcion:"Sierra circular eléctrica de alta potencia para cortes rectos en madera. Con guía paralela para mayor precisión, ajuste de ángulo y profundidad, y traba de eje para facilitar el cambio de disco.",
+        especificaciones:[
+            {l:"Potencia", v:"1400 W"},
+            {l:"Velocidad sin carga", v:"5300 RPM"},
+            {l:"Diámetro del disco", v:"7-1/4\" (184 mm)"},
+            {l:"Ángulo de bisel", v:"45°"},
+            {l:"Profundidad máxima", v:"62 mm (2,4\")"},
+            {l:"Cable", v:"1,8 m (6\")"},
+            {l:"Traba de eje", v:"Sí"}
+        ]
+    },
+    {
+        codigo:"MAQ-007", nombre:"Máquina de Soldar", precio:10000, garantia:80000, img:"img/MAQUINA DE SOLDAR.jpg",
+        descripcion:"Soldadora eléctrica de alta potencia para soldadura por arco con electrodo. Amplio rango de amperaje para distintos tipos de trabajo. Apta para uso profesional en construcción y metalmecánica.",
+        especificaciones:[
+            {l:"Ciclo de trabajo", v:"40% a 200A / 100% a 127A"},
+            {l:"Potencia nominal", v:"10,5 KVA"},
+            {l:"Rango de amperaje", v:"20 - 200 A"},
+            {l:"Tipo de electrodo", v:"2,4 mm / 3,2 mm / 4 mm"},
+            {l:"Alto", v:"23,8 cm"},
+            {l:"Ancho", v:"12,7 cm"},
+            {l:"Profundidad", v:"35 cm"},
+            {l:"Peso", v:"3,9 kg"}
+        ]
+    },
+    {
+        codigo:"MAQ-008", nombre:"Trompo / Betonera 130 LT", precio:10000, garantia:100000, img:"img/TROMPO BETONERA.png",
+        descripcion:"Betonera eléctrica de 130 litros marca LIOI, modelo BT-130. Motor 550W con protección térmica y ruedas de goma para mayor movilidad. Ideal para mezcla de hormigón, mortero y materiales similares en obras.",
+        especificaciones:[
+            {l:"Marca", v:"LIOI"},
+            {l:"Modelo", v:"BT-130"},
+            {l:"Capacidad", v:"130 litros"},
+            {l:"Motor", v:"550 W con protección térmica"},
+            {l:"Velocidad", v:"26,6 rpm/min"},
+            {l:"Boca del tanque", v:"375 mm"},
+            {l:"Diámetro del tanque", v:"570 mm"},
+            {l:"Altura del tanque", v:"610 mm"},
+            {l:"Dimensiones", v:"1200 x 710 x 1400 mm"},
+            {l:"Peso neto/bruto", v:"53 / 57 kg"},
+            {l:"Material", v:"Acero"},
+            {l:"Color", v:"Azul"}
+        ]
+    },
+    {
+        codigo:"MAQ-009", nombre:"Rotomartillo", precio:10000, garantia:50000, img:"img/ROTOMARTILLO.jpg",
+        descripcion:"Rotomartillo de 3J de impacto con voltaje 220V-240V. Permite cincelar, taladrar con percusión y sin percusión. Perfora hormigón hasta 26mm, metal de 13mm y madera de 30mm. Mango ergonómico y embrague de seguridad.",
+        especificaciones:[
+            {l:"Voltaje", v:"220V - 240V"},
+            {l:"Impacto", v:"3 J"},
+            {l:"Velocidad máxima", v:"1100 rpm"},
+            {l:"Golpes por minuto", v:"4000"},
+            {l:"Encastre", v:"SDS Plus 10 mm"},
+            {l:"Hormigón (máx)", v:"26 mm"},
+            {l:"Metal (máx)", v:"13 mm"},
+            {l:"Madera (máx)", v:"30 mm"},
+            {l:"Peso", v:"3 kg"}
+        ]
+    },
+    {
+        codigo:"MAQ-010", nombre:"Cango 7KG", precio:10000, garantia:80000, img:"img/CANGO 7KG 1.jpg",
+        descripcion:"Martillo demoledor de 900W con energía de impacto de 7,2J por golpe. Ideal para demolición de hormigón y pavimentos. Sistema de encastre hexagonal de 17mm y cable de 5m para mayor alcance en obra sin depender de extensiones.",
+        especificaciones:[
+            {l:"Voltaje", v:"220V"},
+            {l:"Potencia", v:"900 W"},
+            {l:"Energía de impacto", v:"7,2 J por golpe"},
+            {l:"Golpes por minuto", v:"2900"},
+            {l:"Sistema de encastre", v:"Hexagonal 17 mm"},
+            {l:"Cable", v:"5 m"},
+            {l:"Peso", v:"7 kg"}
+        ]
+    },
+    {
+        codigo:"MAQ-011", nombre:"Revolvedor", precio:10000, garantia:70000, img:"img/REVOLVEDOR 1.jpg",
+        descripcion:"Revolvedor eléctrico de alta potencia para mezcla de mortero, yeso, pintura y otros materiales de construcción. Ideal para uso profesional en obras.",
+        especificaciones:[
+            {l:"Potencia", v:"1200 W"},
+            {l:"Voltaje", v:"220V"},
+            {l:"Frecuencia", v:"50 Hz"},
+            {l:"Longitud mezclador", v:"120 mm (12 cm)"}
+        ]
+    },
+    {
+        codigo:"MAQ-012", nombre:"Carro de carga / Yegua", precio:10000, garantia:50000, img:"img/CARRO YEGUA.jpg",
+        descripcion:"Carro de carga tipo yegua ideal para el transporte manual de materiales pesados en obras, bodegas y espacios reducidos. Estructura robusta de acero con ruedas de alta resistencia.",
+        especificaciones:[
+            {l:"Capacidad de carga", v:"250 kg"},
+            {l:"Material", v:"Acero"},
+            {l:"Tipo", v:"Carro yegua"}
+        ]
+    },
+    {
+        codigo:"MAQ-013", nombre:"Cango 15KG", precio:15000, garantia:100000, img:"img/CANGO 15KG.jpg",
+        descripcion:"Martillo demoledor de 1900W y 50J de impacto marca TOYAKI. Diseñado para demolición de hormigón armado y pavimentos de alta resistencia. Función exclusiva de martillo demoledor.",
+        especificaciones:[
+            {l:"Marca", v:"TOYAKI"},
+            {l:"Código", v:"TKD1900D"},
+            {l:"Potencia", v:"1900 W"},
+            {l:"Voltaje", v:"220V / 50-60Hz"},
+            {l:"Velocidad", v:"1800 bpm"},
+            {l:"Energía de impacto", v:"50 J"},
+            {l:"Función", v:"Martillo demoledor"},
+            {l:"Peso", v:"15 kg"}
+        ]
+    },
+    {
+        codigo:"MAQ-014", nombre:"Sonda Vibradora", precio:15000, garantia:100000, img:"img/SONDA VIBRADORA 38 mm 1.jpg",
+        descripcion:"Sonda vibradora marca Robin de 5HP con manguera de 6 metros. Ideal para vibrado interno de hormigón fresco, eliminando burbujas de aire y mejorando la resistencia de la estructura.",
+        especificaciones:[
+            {l:"Marca", v:"Robin"},
+            {l:"Modelo", v:"5.0 hp Pro Sonda 6 mts."},
+            {l:"Potencia", v:"3,67 kW (5,0 HP)"},
+            {l:"Largo de la manguera", v:"6 m"},
+            {l:"Velocidad de vibración", v:"3600 RPM"},
+            {l:"Tipo de aceite", v:"10W40"},
+            {l:"Eficiencia energética", v:"A"},
+            {l:"Peso", v:"37 kg"}
+        ]
+    },
+    {
+        codigo:"MAQ-015", nombre:"Generador 3000W", precio:20000, garantia:150000, img:"img/GENERADOR 1.jpeg",
+        descripcion:"Generador a gasolina de 3000W, monofásico, motor de 4 tiempos. Con regulador de voltaje, ruedas para traslado y estanque de 15L. Autonomía de 6 a 7 horas. Para uso profesional en obras sin suministro eléctrico.",
+        especificaciones:[
+            {l:"Modelo", v:"GG3400"},
+            {l:"Potencia", v:"3000 W"},
+            {l:"Voltaje", v:"220V"},
+            {l:"Fase", v:"Monofásico"},
+            {l:"Motor", v:"4 tiempos (Gasolina)"},
+            {l:"Capacidad del estanque", v:"15 litros"},
+            {l:"Autonomía", v:"6-7 horas"},
+            {l:"Partida", v:"Manual"},
+            {l:"Nivel de ruido", v:"96 dB"},
+            {l:"Alto", v:"52 cm"},
+            {l:"Ancho", v:"45 cm"},
+            {l:"Largo", v:"59 cm"},
+            {l:"Regulador de voltaje", v:"Sí"},
+            {l:"Ruedas", v:"Sí"}
+        ]
+    },
+    {
+        codigo:"MAQ-016", nombre:"Placa Compactadora", precio:20000, garantia:250000, img:"img/PLACA COMPACTADORA 2.jpg",
+        descripcion:"Placa compactadora de alta potencia con fuerza centrífuga de 20 kN. Ideal para compactación de suelos granulares, arena, grava y adoquines. Previene asentamientos y grietas en construcciones.",
+        especificaciones:[
+            {l:"Potencia", v:"5,5 HP"},
+            {l:"Fuerza centrífuga", v:"20 kN"},
+            {l:"Velocidad de avance", v:"20 m/min"},
+            {l:"Dimensiones base", v:"420 x 500 mm"},
+            {l:"Dimensiones transporte", v:"700 x 500 x 1.100 mm"},
+            {l:"Peso", v:"90 kg"}
+        ]
+    },
+    {
+        codigo:"MAQ-017", nombre:"Regla Vibradora", precio:30000, garantia:250000, img:"img/REGLA VIBRADORA 2.jpg",
+        descripcion:"Regla vibradora a gasolina marca ZongShen, ideal para el nivelado y vibrado superficial de hormigón fresco en losas y pavimentos. Construcción en aluminio, liviana y fácil de maniobrar.",
+        especificaciones:[
+            {l:"Marca", v:"ZongShen"},
+            {l:"Motor", v:"35CC"},
+            {l:"Potencia", v:"1 HP"},
+            {l:"Tiempos", v:"4 Tiempos"},
+            {l:"Combustible", v:"Gasolina"},
+            {l:"Aceite", v:"10W40 (motores 4T)"},
+            {l:"Largo de la regla", v:"2 metros"},
+            {l:"Ancho de la regla", v:"14 cm"},
+            {l:"Material", v:"Aluminio"}
+        ]
+    },
+    {
+        codigo:"MAQ-018", nombre:"Alisador de Pavimento", precio:30000, garantia:250000, img:"img/ALISADOR PAVIMENTO.jpeg",
+        descripcion:"Alisadora de pavimento tipo helicóptero marca Robin, con motor a gasolina Robin Subaru EY20 de 4 tiempos. Ideal para obtener acabados perfectamente lisos en losas de hormigón recién vaciado.",
+        especificaciones:[
+            {l:"Marca", v:"Robin"},
+            {l:"Motor", v:"Gasolina 4T Robin Subaru EY20"},
+            {l:"Diámetro de disco", v:"920 mm"},
+            {l:"Aspas", v:"4 aspas de 440 mm"},
+            {l:"Velocidad de pulido", v:"50 - 100 rpm"},
+            {l:"Incluye base", v:"Sí"},
+            {l:"Peso total", v:"92 kg"}
+        ]
+    }
 ];
 
 const servicios = [
@@ -329,52 +563,35 @@ const servicios = [
 ];
 
 let reserva = [];
+let modalIndex = -1;
 
 function formato(num){
     return Number(num).toLocaleString("es-CL");
 }
 
 function obtenerDias(){
-    const inicioValor = document.getElementById("fechaInicio").value;
-    const finValor = document.getElementById("fechaFin").value;
-
-    if(!inicioValor || !finValor) return 0;
-
-    const inicio = new Date(inicioValor);
-    const fin = new Date(finValor);
-
-    const diferencia = Math.ceil((fin - inicio) / (1000 * 60 * 60 * 24)) + 1;
-
-    return diferencia > 0 ? diferencia : 0;
+    const ini = document.getElementById("fechaInicio").value;
+    const fin = document.getElementById("fechaFin").value;
+    if(!ini || !fin) return 0;
+    const diff = Math.ceil((new Date(fin) - new Date(ini)) / (1000*60*60*24)) + 1;
+    return diff > 0 ? diff : 0;
 }
 
 function pintarMaquinarias(){
     const grid = document.getElementById("gridMaquinarias");
     grid.innerHTML = "";
-
     maquinarias.forEach((m, index)=>{
         grid.innerHTML += `
         <div class="card">
-            <div class="media">
+            <div class="media" onclick="abrirModal(${index})">
                 <img src="${m.img}" alt="${m.nombre}">
             </div>
-
             <div class="info">
                 <h3>${m.codigo} — ${m.nombre}</h3>
                 <p>Precio por día laboral: $${formato(m.precio)}</p>
                 <p>Garantía: $${formato(m.garantia)}</p>
-
-                <input 
-                    class="cantidad" 
-                    id="cant-maq-${index}" 
-                    type="number" 
-                    min="1" 
-                    value="1"
-                >
-
-                <button onclick="agregarMaquinaria(${index})">
-                    Agregar a reserva
-                </button>
+                <input class="cantidad" id="cant-maq-${index}" type="number" min="1" value="1">
+                <button onclick="agregarMaquinaria(${index})">Agregar a reserva</button>
             </div>
         </div>`;
     });
@@ -383,21 +600,16 @@ function pintarMaquinarias(){
 function pintarServicios(){
     const grid = document.getElementById("gridServicios");
     grid.innerHTML = "";
-
     servicios.forEach((s, index)=>{
         grid.innerHTML += `
         <div class="card">
             <div class="media">
                 <img src="${s.img}" alt="${s.nombre}">
             </div>
-
             <div class="info">
                 <h3>${s.codigo} — ${s.nombre}</h3>
                 <p>Precio: $${formato(s.precio)} por ${s.unidad}</p>
-
-                <button onclick="agregarServicio(${index})">
-                    Agregar a reserva
-                </button>
+                <button onclick="agregarServicio(${index})">Agregar a reserva</button>
             </div>
         </div>`;
     });
@@ -406,57 +618,37 @@ function pintarServicios(){
 function agregarMaquinaria(index){
     const item = maquinarias[index];
     const cantidad = Number(document.getElementById(`cant-maq-${index}`).value) || 1;
-
-    reserva.push({
-        ...item,
-        tipo:"Maquinaria",
-        cantidad:cantidad
-    });
-
+    reserva.push({...item, tipo:"Maquinaria", cantidad});
     actualizarReserva();
     location.href = "#reserva";
 }
 
 function agregarServicio(index){
     const item = servicios[index];
-
-    reserva.push({
-        ...item,
-        tipo:"Servicio",
-        cantidad:1,
-        garantia:0
-    });
-
+    reserva.push({...item, tipo:"Servicio", cantidad:1, garantia:0});
     actualizarReserva();
     location.href = "#reserva";
 }
 
 function actualizarReserva(){
     const contenedor = document.getElementById("listaReserva");
-
     if(reserva.length === 0){
         contenedor.innerHTML = "Aún no has agregado productos.";
         calcularTotales();
         return;
     }
-
     contenedor.innerHTML = "";
-
     reserva.forEach((item, index)=>{
         contenedor.innerHTML += `
         <div class="item-reserva">
-            <strong>${index + 1}. ${item.codigo} — ${item.nombre}</strong><br>
+            <strong>${index+1}. ${item.codigo} — ${item.nombre}</strong><br>
             Tipo: ${item.tipo}<br>
             Cantidad: ${item.cantidad}<br>
             Precio unitario: $${formato(item.precio)}<br>
             Garantía: $${formato(item.garantia || 0)}<br><br>
-
-            <button onclick="eliminarItem(${index})">
-                Eliminar
-            </button>
+            <button onclick="eliminarItem(${index})">Eliminar</button>
         </div>`;
     });
-
     calcularTotales();
 }
 
@@ -467,10 +659,8 @@ function eliminarItem(index){
 
 function calcularTotales(){
     const dias = obtenerDias();
-
     let totalArriendo = 0;
     let totalGarantia = 0;
-
     reserva.forEach(item=>{
         if(item.tipo === "Maquinaria"){
             totalArriendo += item.precio * item.cantidad * dias;
@@ -479,7 +669,6 @@ function calcularTotales(){
             totalArriendo += item.precio * dias;
         }
     });
-
     document.getElementById("totalArriendo").textContent = formato(totalArriendo);
     document.getElementById("totalGarantia").textContent = formato(totalGarantia);
     document.getElementById("totalFinal").textContent = formato(totalArriendo + totalGarantia);
@@ -488,108 +677,172 @@ function calcularTotales(){
 document.getElementById("fechaInicio").addEventListener("change", calcularTotales);
 document.getElementById("fechaFin").addEventListener("change", calcularTotales);
 
+// ===== MODAL =====
+function abrirModal(index){
+    const m = maquinarias[index];
+    modalIndex = index;
+
+    document.getElementById("modalImg").src = m.img;
+    document.getElementById("modalImg").alt = m.nombre;
+    document.getElementById("modalCodigo").textContent = m.codigo;
+    document.getElementById("modalNombre").textContent = m.nombre;
+    document.getElementById("modalDesc").textContent = m.descripcion;
+    document.getElementById("mPrecio").textContent = "$" + formato(m.precio);
+    document.getElementById("mGarantia").textContent = "$" + formato(m.garantia);
+
+    document.getElementById("modalSpecs").innerHTML = m.especificaciones
+        .map(e => `<tr><td>${e.l}</td><td>${e.v}</td></tr>`)
+        .join("");
+
+    const ini = document.getElementById("fechaInicio").value;
+    const fin = document.getElementById("fechaFin").value;
+    document.getElementById("mFechaInicio").value = ini;
+    document.getElementById("mFechaFin").value = fin;
+    document.getElementById("mCantidad").value = 1;
+
+    cambiarTab("descripcion", document.querySelector(".tab-btn"));
+
+    recalcularModal();
+    document.getElementById("modal").classList.add("activo");
+    document.body.style.overflow = "hidden";
+}
+
+function cerrarModal(){
+    document.getElementById("modal").classList.remove("activo");
+    document.body.style.overflow = "";
+    modalIndex = -1;
+}
+
+function clickFueraModal(e){
+    if(e.target.id === "modal") cerrarModal();
+}
+
+function cambiarTab(tab, btn){
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("activo"));
+    document.querySelectorAll(".tab-contenido").forEach(c => c.classList.remove("activo"));
+    document.getElementById("tab-" + tab).classList.add("activo");
+    if(btn) btn.classList.add("activo");
+}
+
+function obtenerDiasModal(){
+    const ini = document.getElementById("mFechaInicio").value;
+    const fin = document.getElementById("mFechaFin").value;
+    if(!ini || !fin) return 0;
+    const diff = Math.ceil((new Date(fin) - new Date(ini)) / (1000*60*60*24)) + 1;
+    return diff > 0 ? diff : 0;
+}
+
+function recalcularModal(){
+    if(modalIndex < 0) return;
+    const m = maquinarias[modalIndex];
+    const cant = Number(document.getElementById("mCantidad").value) || 1;
+    const dias = obtenerDiasModal();
+    const el = document.getElementById("mTotal");
+
+    if(dias > 0){
+        const arriendo = m.precio * cant * dias;
+        const garantia = m.garantia * cant;
+        el.innerHTML =
+            `<strong>Arriendo</strong> (${dias} día${dias>1?"s":""} × ${cant} ud): $${formato(arriendo)}<br>` +
+            `<strong>Garantía:</strong> $${formato(garantia)}<br>` +
+            `<strong>Total estimado: $${formato(arriendo + garantia)}</strong>`;
+    } else {
+        el.textContent = "Selecciona fechas para ver el total estimado.";
+    }
+}
+
+function agregarDesdeModal(){
+    if(modalIndex < 0) return;
+    const m = maquinarias[modalIndex];
+    const cant = Number(document.getElementById("mCantidad").value) || 1;
+    const ini = document.getElementById("mFechaInicio").value;
+    const fin = document.getElementById("mFechaFin").value;
+
+    if(!document.getElementById("fechaInicio").value && ini)
+        document.getElementById("fechaInicio").value = ini;
+    if(!document.getElementById("fechaFin").value && fin)
+        document.getElementById("fechaFin").value = fin;
+
+    calcularTotales();
+    reserva.push({...m, tipo:"Maquinaria", cantidad:cant});
+    actualizarReserva();
+    cerrarModal();
+    location.href = "#reserva";
+}
+
+document.addEventListener("keydown", e => { if(e.key === "Escape") cerrarModal(); });
+
+// ===== FORMULARIO WHATSAPP =====
 document.getElementById("formReserva").addEventListener("submit", function(e){
     e.preventDefault();
-
-    if(reserva.length === 0){
-        alert("Primero agrega una maquinaria o servicio a la reserva.");
-        return;
-    }
-
+    if(reserva.length === 0){ alert("Primero agrega una maquinaria o servicio a la reserva."); return; }
     const dias = obtenerDias();
+    if(dias === 0){ alert("Selecciona una fecha de inicio y término válida."); return; }
 
-    if(dias === 0){
-        alert("Selecciona una fecha de inicio y término válida.");
-        return;
-    }
-
-    const nombre = document.getElementById("nombre").value;
-    const rut = document.getElementById("rut").value;
+    const nombre   = document.getElementById("nombre").value;
+    const rut      = document.getElementById("rut").value;
     const telefono = document.getElementById("telefono").value;
-    const direccion = document.getElementById("direccionCliente").value;
-    const inicio = document.getElementById("fechaInicio").value;
-    const fin = document.getElementById("fechaFin").value;
-    const comentario = document.getElementById("comentario").value;
+    const direccion= document.getElementById("direccionCliente").value;
+    const inicio   = document.getElementById("fechaInicio").value;
+    const fin      = document.getElementById("fechaFin").value;
+    const comentario= document.getElementById("comentario").value;
 
     let totalArriendo = 0;
     let totalGarantia = 0;
 
-    let mensaje = `Hola, quiero realizar una reserva.%0A%0A`;
+    const inicioFormateado = new Date(inicio).toLocaleDateString("es-CL");
+    const finFormateado    = new Date(fin).toLocaleDateString("es-CL");
 
-    mensaje += `Nombre: ${nombre}%0A`;
-    mensaje += `RUT: ${rut}%0A`;
-    mensaje += `Teléfono: ${telefono}%0A`;
-    mensaje += `Dirección cliente: ${direccion}%0A%0A`;
-
-    const inicioFormateado = new Date(inicio).toLocaleDateString('es-CL');
-const finFormateado = new Date(fin).toLocaleDateString('es-CL');
-    mensaje += `Fecha inicio: ${inicioFormateado}%0A`;
-mensaje += `Fecha término: ${finFormateado}%0A`;
-    mensaje += `Días de arriendo: ${dias}%0A%0A`;
-
-    mensaje += `Detalle de reserva:%0A`;
+    let msg = `Hola, quiero realizar una reserva.%0A%0A`;
+    msg += `Nombre: ${nombre}%0A`;
+    msg += `RUT: ${rut}%0A`;
+    msg += `Teléfono: ${telefono}%0A`;
+    msg += `Dirección cliente: ${direccion}%0A%0A`;
+    msg += `Fecha inicio: ${inicioFormateado}%0A`;
+    msg += `Fecha término: ${finFormateado}%0A`;
+    msg += `Días de arriendo: ${dias}%0A%0A`;
+    msg += `Detalle de reserva:%0A`;
 
     reserva.forEach((item, i)=>{
-        let subtotal = 0;
-        let garantia = 0;
-
+        let sub = 0, gar = 0;
         if(item.tipo === "Maquinaria"){
-            subtotal = item.precio * item.cantidad * dias;
-            garantia = item.garantia * item.cantidad;
+            sub = item.precio * item.cantidad * dias;
+            gar = item.garantia * item.cantidad;
         } else {
-            subtotal = item.precio * dias;
+            sub = item.precio * dias;
         }
-
-        totalArriendo += subtotal;
-        totalGarantia += garantia;
-
-        mensaje += `%0A${i + 1}) ${item.tipo}%0A`;
-        mensaje += `Código: ${item.codigo}%0A`;
-        mensaje += `Nombre: ${item.nombre}%0A`;
-        mensaje += `Cantidad: ${item.cantidad}%0A`;
-        mensaje += `Subtotal arriendo/servicio: $${formato(subtotal)}%0A`;
-        mensaje += `Garantía: $${formato(garantia)}%0A`;
+        totalArriendo += sub;
+        totalGarantia += gar;
+        msg += `%0A${i+1}) ${item.tipo}%0A`;
+        msg += `Código: ${item.codigo}%0A`;
+        msg += `Nombre: ${item.nombre}%0A`;
+        msg += `Cantidad: ${item.cantidad}%0A`;
+        msg += `Subtotal: $${formato(sub)}%0A`;
+        msg += `Garantía: $${formato(gar)}%0A`;
     });
 
-    mensaje += `%0ATotal arriendo/servicio: $${formato(totalArriendo)}%0A`;
-    mensaje += `Total garantía: $${formato(totalGarantia)}%0A`;
-    mensaje += `Total a pagar: $${formato(totalArriendo + totalGarantia)}%0A`;
+    msg += `%0ATotal arriendo/servicio: $${formato(totalArriendo)}%0A`;
+    msg += `Total garantía: $${formato(totalGarantia)}%0A`;
+    msg += `Total a pagar: $${formato(totalArriendo + totalGarantia)}%0A`;
+    if(comentario.trim()) msg += `%0AComentario: ${comentario}%0A`;
+    msg += `%0AIMPORTANTE:%0A`;
+    msg += `Debe enviar foto de su Cédula de Identidad y comprobante de domicilio para hacer efectiva la reserva.%0A`;
+    msg += `Comprobantes válidos: agua, luz, internet, etc.`;
 
-    if(comentario.trim() !== ""){
-        mensaje += `%0AComentario: ${comentario}%0A`;
-    }
-
-    mensaje += `%0AIMPORTANTE:%0A`;
-    mensaje += `Debe enviar foto de su Cédula de Identidad y comprobante de domicilio para hacer efectiva la reserva.%0A`;
-    mensaje += `Comprobantes válidos: agua, luz, internet, etc.`;
-
-    window.open(`https://wa.me/${whatsapp}?text=${mensaje}`, "_blank");
+    window.open(`https://wa.me/${whatsapp}?text=${msg}`, "_blank");
 
     document.getElementById("confirmacion").innerHTML = `
         <div class="popup-confirmacion">
             <h3>✅ Solicitud enviada correctamente</h3>
-
-            <p>
-                <strong>IMPORTANTE:</strong><br><br>
-                Para hacer efectiva la reserva, debe enviar:
-            </p>
-
+            <p><strong>IMPORTANTE:</strong><br><br>Para hacer efectiva la reserva, debe enviar:</p>
             <ul>
                 <li>Foto de Cédula de Identidad</li>
                 <li>Comprobante de domicilio</li>
             </ul>
-
-            <p>
-                Ejemplos válidos: agua, luz, internet, etc.
-            </p>
-
-            <p>
-                Nos pondremos en contacto a la brevedad.
-            </p>
-
+            <p>Ejemplos válidos: agua, luz, internet, etc.</p>
+            <p>Nos pondremos en contacto a la brevedad.</p>
             <button onclick="cerrarPopup()">Entendido</button>
-        </div>
-    `;
+        </div>`;
 });
 
 function cerrarPopup(){
