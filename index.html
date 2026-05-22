@@ -65,210 +65,7 @@
 }
 </script>
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-html{scroll-behavior:smooth}
-body{background:#111;color:white}
-
-.hero{
-    min-height:100vh;
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:20px;
-}
-.hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
-.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.hero > div{position:relative;z-index:2}
-.hero h1{color:#FFD000;font-size:4rem;margin-bottom:20px}
-.hero p{font-size:1.5rem;margin-bottom:30px}
-
-.redes{display:flex;justify-content:center;gap:15px;margin-bottom:35px}
-.redes a{
-    width:55px;height:55px;border-radius:50%;background:#FFD000;color:#000;
-    display:flex;justify-content:center;align-items:center;
-    text-decoration:none;font-weight:bold;
-}
-
-.botones{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
-
-.btn, button{
-    background:#FFD000;color:#000;border:none;
-    padding:15px 25px;border-radius:10px;font-weight:bold;
-    cursor:pointer;text-decoration:none;font-size:1rem;
-}
-.btn:hover, button:hover{background:white}
-
-section{padding:80px 10%}
-h2{color:#FFD000;text-align:center;font-size:2.6rem;margin-bottom:40px}
-
-#quienes-somos{background:#181818;border-top:3px solid #FFD000}
-#quienes-somos h2{text-align:left}
-#quienes-somos h3{color:#FFD000;font-size:1.4rem;margin:30px 0 16px}
-#quienes-somos p{color:#ccc;font-size:1.05rem;line-height:1.8;max-width:800px}
-#quienes-somos ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:8px}
-#quienes-somos ul li{background:#222;border:1px solid #FFD000;border-radius:10px;padding:14px 18px;color:#fff;font-size:0.95rem}
-#quienes-somos ul li::before{content:"✓ ";color:#FFD000;font-weight:bold}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:30px}
-
-.card{background:#222;border:2px solid #FFD000;border-radius:16px;overflow:hidden}
-
-.media{
-    height:240px;overflow:hidden;background:#333;
-    cursor:pointer;position:relative;
-}
-.media img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
-.media:hover img{transform:scale(1.05)}
-.media::after{
-    content:"🔍 Ver detalles";
-    position:absolute;inset:0;
-    background:rgba(0,0,0,0);color:transparent;
-    display:flex;align-items:center;justify-content:center;
-    font-weight:bold;font-size:1rem;letter-spacing:1px;
-    transition:all .25s;
-}
-.media:hover::after{background:rgba(0,0,0,.55);color:#FFD000}
-
-.info{padding:25px}
-.info h3{color:#FFD000;margin-bottom:15px}
-.info p{margin-bottom:8px}
-
-.cantidad{width:100%;padding:13px;border:none;border-radius:8px;margin:15px 0}
-
-.reserva{background:#181818}
-.lista-reserva{
-    max-width:900px;margin:auto;background:#222;
-    border:2px solid #FFD000;border-radius:16px;padding:25px;
-}
-.item-reserva{border-bottom:1px solid #444;padding:15px 0}
-
-.total{
-    margin-top:20px;background:#111;
-    border:1px solid #FFD000;border-radius:12px;padding:20px;
-}
-
-form{max-width:900px;margin:35px auto 0;display:flex;flex-direction:column;gap:15px}
-input,textarea{padding:15px;border:none;border-radius:8px;font-size:1rem}
-textarea{min-height:100px}
-
-.confirmacion{text-align:center;margin-top:25px}
-
-.popup-confirmacion{
-    position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
-    background:#1e1e1e;border:3px solid #FFD000;
-    padding:35px;border-radius:20px;z-index:9999;
-    width:90%;max-width:520px;text-align:center;
-    box-shadow:0 0 40px rgba(0,0,0,.9);
-}
-.popup-confirmacion h3{color:#FFD000;margin-bottom:20px}
-.popup-confirmacion ul{margin:20px 0;text-align:left;padding-left:25px}
-.popup-confirmacion button{width:100%;margin-top:15px}
-
-footer{text-align:center;background:#000;padding:25px}
-
-/* ===== MODAL ===== */
-.modal-overlay{
-    display:none;position:fixed;inset:0;
-    background:rgba(0,0,0,.9);z-index:3000;
-    align-items:center;justify-content:center;
-    padding:20px;overflow-y:auto;
-}
-.modal-overlay.activo{display:flex}
-
-.modal-box{
-    background:#1a1a1a;border:2px solid #FFD000;border-radius:20px;
-    width:100%;max-width:960px;
-    display:grid;grid-template-columns:1fr 1fr;
-    position:relative;overflow:hidden;
-    max-height:95vh;
-}
-
-.modal-cerrar{
-    position:absolute;top:12px;right:12px;
-    background:#FFD000;color:#000;border:none;
-    border-radius:50%;width:36px;height:36px;
-    font-size:1.1rem;font-weight:bold;cursor:pointer;z-index:10;
-    display:flex;align-items:center;justify-content:center;
-    padding:0;
-}
-.modal-cerrar:hover{background:white}
-
-.modal-img-wrap{
-    background:#111;display:flex;align-items:center;justify-content:center;
-    min-height:400px;
-}
-.modal-img-wrap img{width:100%;height:100%;object-fit:contain;max-height:95vh}
-
-.modal-info{
-    padding:28px 28px 20px;overflow-y:auto;
-    display:flex;flex-direction:column;gap:14px;
-    max-height:95vh;
-}
-.modal-codigo{color:#aaa;font-size:.82rem;letter-spacing:1px}
-.modal-info h2{color:#FFD000;font-size:1.35rem;text-align:left;margin:0}
-
-/* Tabs */
-.tabs{display:flex;gap:6px;flex-wrap:wrap}
-.tab-btn{
-    background:#2d2d2d;color:#ccc;border:none;
-    padding:8px 18px;border-radius:8px;cursor:pointer;
-    font-size:.88rem;font-weight:bold;
-}
-.tab-btn.activo{background:#FFD000;color:#000}
-.tab-btn:hover:not(.activo){background:#444;color:#fff}
-
-.tab-contenido{display:none;color:#ccc;font-size:.93rem;line-height:1.65;min-height:80px}
-.tab-contenido.activo{display:block}
-
-.specs-tabla{width:100%;border-collapse:collapse}
-.specs-tabla tr:nth-child(even){background:#242424}
-.specs-tabla td{padding:7px 10px;border-bottom:1px solid #333;font-size:.88rem}
-.specs-tabla td:first-child{color:#FFD000;font-weight:bold;width:48%}
-
-/* Modal reserva */
-.modal-reserva{border-top:1px solid #3a3a3a;padding-top:14px;display:flex;flex-direction:column;gap:10px}
-
-.modal-precios{
-    background:#111;border:1px solid #444;border-radius:10px;
-    padding:12px 15px;display:flex;justify-content:space-between;gap:10px;
-    font-size:.88rem;flex-wrap:wrap;
-}
-.modal-precios span{color:#FFD000;font-weight:bold}
-
-.modal-fechas{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.modal-fechas label{font-size:.78rem;color:#aaa;display:block;margin-bottom:4px}
-.modal-date-input{width:100%;padding:9px;border:none;border-radius:8px;font-size:.88rem}
-
-.modal-cant-row{display:flex;align-items:center;gap:10px}
-.modal-cant-row label{font-size:.9rem;white-space:nowrap;color:#ccc}
-.modal-cant-row input{width:75px;padding:9px;border:none;border-radius:8px;font-size:.95rem}
-
-.modal-total-box{
-    background:#111;border:1px solid #333;border-radius:8px;
-    padding:10px 13px;font-size:.86rem;color:#aaa;line-height:1.7;
-}
-.modal-total-box strong{color:#FFD000}
-
-.modal-btn-agregar{
-    background:#FFD000;color:#000;border:none;
-    padding:13px;border-radius:10px;font-weight:bold;
-    cursor:pointer;font-size:1rem;width:100%;
-}
-.modal-btn-agregar:hover{background:white}
-
-@media(max-width:768px){
-    .hero h1{font-size:2.4rem}
-    .hero p{font-size:1.1rem}
-    section{padding:60px 5%}
-    .modal-box{grid-template-columns:1fr}
-    .modal-img-wrap{min-height:220px;max-height:260px}
-    .modal-info{max-height:none}
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -292,11 +89,14 @@ footer{text-align:center;background:#000;padding:25px}
 
 <section id="maquinarias">
     <h2>Maquinarias Disponibles</h2>
+    <h3 class="subtitulo-seccion">Herramientas Eléctricas</h3>
+    <h3 class="subtitulo-seccion">Equipos de Construcción</h3>
     <div class="grid" id="gridMaquinarias"></div>
 </section>
 
 <section id="servicios">
     <h2>Servicios Disponibles</h2>
+    <h3 class="subtitulo-seccion">Servicios de Construcción General</h3>
     <div class="grid" id="gridServicios"></div>
 </section>
 
