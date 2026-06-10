@@ -5,7 +5,7 @@ body{background:#111;color:white}
 .navbar{
     position:sticky;top:0;z-index:100;
     display:flex;align-items:center;justify-content:space-between;
-    background:#f0eeeb;padding:8px 5%;
+    background:#eae9e5;padding:8px 5%;
     box-shadow:0 2px 12px rgba(0,0,0,.4);
 }
 .navbar-brand{display:flex;align-items:center}
