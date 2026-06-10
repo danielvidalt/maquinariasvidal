@@ -202,3 +202,4 @@ footer{text-align:center;background:#000;padding:25px}
 }
 
 .subtitulo-seccion{color:#666;font-size:0.85rem;text-align:center;text-transform:uppercase;letter-spacing:2px;margin:-30px 0 25px;font-weight:normal}
+.subtitulo-seccion + .subtitulo-seccion{margin-top:0}
